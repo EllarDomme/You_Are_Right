@@ -1,13 +1,13 @@
 #include<stdio.h>
 #include <stdlib.h> 
 
-// ¹¹Ôì¶ş²æÊ÷Á´±í½Úµã½á¹¹Ìå 
+// æ„é€ äºŒå‰æ ‘é“¾è¡¨èŠ‚ç‚¹ç»“æ„ä½“ 
 typedef struct BiTreeNode {
     int data;
     struct BiTreeNode *lchild, *rchild;
 } BiTreeNode;
 
-// ¹¹ÔìÉú³É¶ş²æÊ÷½Úµãº¯Êı
+// æ„é€ ç”ŸæˆäºŒå‰æ ‘èŠ‚ç‚¹å‡½æ•°
 BiTreeNode *creatTree(int data) {
     BiTreeNode *newNode = (BiTreeNode *)malloc(sizeof(BiTreeNode));
     newNode->data = data;
@@ -16,16 +16,16 @@ BiTreeNode *creatTree(int data) {
     return newNode;
 }
 
-// ¹¹ÔìÏÔÊ¾º¯Êı
+// æ„é€ æ˜¾ç¤ºå‡½æ•°
 void showTree(BiTreeNode *tree1) {
     if (tree1) {
-        printf("Êı¾İÎª£º%d ", tree1->data);
+        printf("æ•°æ®ä¸ºï¼š%d ", tree1->data);
         showTree(tree1->lchild);
         showTree(tree1->rchild);
     }
 }
 
-// ¹¹Ôì½»»»º¢×Óº¯Êı 
+// æ„é€ äº¤æ¢å­©å­å‡½æ•° 
 void exchangeChild(BiTreeNode *tree1) { 
     if (tree1!= NULL) {
         BiTreeNode *temp = tree1->lchild;
@@ -36,7 +36,7 @@ void exchangeChild(BiTreeNode *tree1) {
     }
 }
 
-// ²âÊÔËã·¨µÄ¿ÉĞĞĞÔ
+// æµ‹è¯•ç®—æ³•çš„å¯è¡Œæ€§
 int main() {
     BiTreeNode *tree1 = creatTree(1);
     tree1->lchild = creatTree(2);
@@ -46,3 +46,4 @@ int main() {
     showTree(tree1);
     return 0;
 }
+//ä½ å¥½å‘€æœªæ¥çš„ä½ ä»¬
